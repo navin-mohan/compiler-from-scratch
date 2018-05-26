@@ -392,7 +392,7 @@ Token* isIdentifier(FILE* fp,char c){
 			str[i] = '\0';
 			return create_token(isKeyword(str)?KW:ID,str);
 		}
-	}while(isalnum(c));
+	}while(isalnum(c) || c == '_');
 
 	ungetc(c,fp);
 	str[i] = '\0';
